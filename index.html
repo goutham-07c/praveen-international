@@ -1,237 +1,311 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Praveen International - Jeans Clothing</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen International - Jeans Clothing</title>
 
-    body {
-      background: #f5f5f5;
-      color: #333;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    header {
-      background: #111;
-      color: #fff;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
 
-    header h1 {
-      color: #00bcd4;
-    }
+body{
+background:#f4f6f9;
+color:#333;
+scroll-behavior:smooth;
+}
 
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* HEADER */
+header{
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-    nav a:hover {
-      color: #00bcd4;
-    }
+.logo{
+display:flex;
+align-items:center;
+}
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url("https://images.unsplash.com/photo-1520975916090-3105956dac38") no-repeat center/cover;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+.logo img{
+width:45px;
+margin-right:10px;
+}
 
-    .hero h2 {
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
+nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+font-weight:500;
+}
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+nav a:hover{
+color:#00e5ff;
+}
 
-    .btn {
-      padding: 12px 30px;
-      background: #00bcd4;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
+/* HERO */
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1520975916090-3105956dac38") no-repeat center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+animation:fadeIn 2s;
+}
 
-    .btn:hover {
-      background: #0097a7;
-    }
+.hero h2{
+font-size:50px;
+}
 
-    section {
-      padding: 60px 80px;
-      background: #fff;
-      margin: 20px;
-      border-radius: 10px;
-    }
+.hero p{
+font-size:20px;
+margin:20px 0;
+}
 
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #00bcd4;
-    }
+.btn{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
 
-    .about p {
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.btn:hover{
+transform:scale(1.05);
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* SECTIONS */
+section{
+padding:60px 40px;
+background:white;
+margin:30px auto;
+border-radius:20px;
+max-width:1200px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+animation:slideUp 1.5s;
+}
 
-    .card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#0072ff;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      height: 200px;
-      object-fit: cover;
-    }
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-    .card h3 {
-      margin: 15px 0;
-    }
+.card{
+padding:15px;
+background:#f9fbfd;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
+.card:hover{
+transform:translateY(-8px);
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      height: 200px;
-      object-fit: cover;
-    }
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+}
 
-    .contact form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
 
-    .contact input, .contact textarea {
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+transition:0.3s;
+}
 
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-  </style>
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact-info{
+text-align:center;
+margin-bottom:20px;
+font-size:18px;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input,textarea{
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+/* FOOTER */
+footer{
+background:#0f2027;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:24px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes slideUp{
+from{transform:translateY(50px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h2{font-size:32px;}
+header{flex-direction:column;}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Praveen International</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div class="logo">
+<img src="https://cdn-icons-png.flaticon.com/512/892/892458.png">
+<h1>Praveen International</h1>
+</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <section class="hero" id="home">
-  <div>
-    <h2>Premium Jeans Clothing</h2>
-    <p>Modern. Stylish. Professional Jeans Manufacturer</p>
-    <a href="#contact" class="btn">Contact Us</a>
-  </div>
+<div>
+<h2>Premium Denim Wear</h2>
+<p>Modern • Stylish • Professional Jeans Brand</p>
+<a href="#contact" class="btn">Contact Us</a>
+</div>
 </section>
 
-<section class="about" id="about">
-  <h2>About Us</h2>
-  <p>
-    Praveen International is a trusted jeans clothing business delivering high-quality, modern and stylish denim products.
-    We focus on comfort, durability and fashion trends for customers worldwide.
-  </p>
+<section id="about">
+<h2>About Us</h2>
+<p style="text-align:center;font-size:18px;">
+Praveen International is a premium jeans clothing brand delivering high-quality, stylish and durable denim wear.  
+We blend modern fashion with comfort and craftsmanship.
+</p>
 </section>
 
 <section id="products">
-  <h2>Our Products</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-      <h3>Men's Jeans</h3>
-      <p>Trendy and durable jeans for men.</p>
-    </div>
+<h2>Our Products</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+<h3>Men's Jeans</h3>
+<p>Trendy and durable.</p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-      <h3>Women's Jeans</h3>
-      <p>Stylish and comfortable jeans for women.</p>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>Women's Jeans</h3>
+<p>Stylish and comfortable.</p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1602810318383-e386cc6b9c21">
-      <h3>Casual Wear</h3>
-      <p>Perfect jeans for daily casual wear.</p>
-    </div>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc6b9c21">
+<h3>Casual Wear</h3>
+<p>Perfect for daily fashion.</p>
+</div>
+</div>
 </section>
 
 <section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
-    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-    <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f">
-  </div>
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+<img src="https://images.unsplash.com/photo-1542060748-10c28b62716f">
+</div>
 </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea rows="5" placeholder="Your Message"></textarea>
-    <button class="btn">Send Message</button>
-  </form>
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="contact-info">
+📞 Phone: +91 9876543210 <br>
+📧 Email: praveeninternational@gmail.com <br>
+📍 Address: Bangalore, Karnataka, India
+</div>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
 </section>
 
 <footer>
-  <p>© 2026 Praveen International | All Rights Reserved</p>
+<p>© 2026 Praveen International | All Rights Reserved</p>
 </footer>
 
-</
+<!-- WhatsApp Button -->
+<a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
+
+</b
