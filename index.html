@@ -1,29 +1,18 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praveen International - Jeans Clothing</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
 
-body{
-background:#f4f6f9;
-color:#333;
-scroll-behavior:smooth;
-}
+body{background:#f4f6f9;color:#333;transition:0.3s;}
 
-/* HEADER */
+.dark-mode{background:#121212;color:white;}
+
 header{
 background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
 color:white;
@@ -36,66 +25,37 @@ top:0;
 z-index:1000;
 }
 
-.logo{
-display:flex;
-align-items:center;
-}
+.logo{display:flex;align-items:center;}
+.logo img{width:45px;margin-right:10px;}
 
-.logo img{
-width:45px;
-margin-right:10px;
-}
+nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
 
-nav a{
-color:white;
-margin-left:15px;
-text-decoration:none;
-font-weight:500;
-}
-
-nav a:hover{
-color:#00e5ff;
-}
-
-/* HERO */
 .hero{
 height:90vh;
 background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url("https://images.unsplash.com/photo-1520975916090-3105956dac38") no-repeat center/cover;
+url("https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
 padding:20px;
-animation:fadeIn 2s;
 }
 
-.hero h2{
-font-size:50px;
-}
-
-.hero p{
-font-size:20px;
-margin:20px 0;
-}
+.hero h2{font-size:50px;animation:fadeIn 2s;}
+.hero p{font-size:20px;margin:20px 0;}
 
 .btn{
 padding:14px 30px;
-border:none;
 border-radius:30px;
 background:linear-gradient(135deg,#00c6ff,#0072ff);
 color:white;
-font-weight:bold;
 text-decoration:none;
-transition:0.3s;
+font-weight:bold;
+display:inline-block;
+margin-top:10px;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* SECTIONS */
 section{
 padding:60px 40px;
 background:white;
@@ -103,16 +63,9 @@ margin:30px auto;
 border-radius:20px;
 max-width:1200px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
-animation:slideUp 1.5s;
+animation:fadeUp 1s;
 }
 
-h2{
-text-align:center;
-margin-bottom:20px;
-color:#0072ff;
-}
-
-/* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -127,18 +80,17 @@ text-align:center;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
+.card:hover{transform:translateY(-8px);}
 
 .card img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 border-radius:12px;
 }
 
-/* GALLERY */
+.price{font-size:18px;font-weight:bold;color:#0072ff;margin:8px 0;}
+
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -153,32 +105,27 @@ border-radius:12px;
 transition:0.3s;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+.gallery img:hover{transform:scale(1.05);}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* CONTACT */
-.contact-info{
-text-align:center;
-margin-bottom:20px;
-font-size:18px;
+.review{
+background:#f1f1f1;
+padding:20px;
+border-radius:15px;
 }
 
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
+iframe{
+width:100%;
+height:300px;
+border-radius:15px;
+border:none;
 }
 
-input,textarea{
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-/* FOOTER */
 footer{
 background:#0f2027;
 color:white;
@@ -186,7 +133,6 @@ text-align:center;
 padding:20px;
 }
 
-/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -197,21 +143,29 @@ padding:15px 18px;
 border-radius:50%;
 font-size:24px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ANIMATION */
+.toggle{
+position:fixed;
+bottom:20px;
+left:20px;
+background:black;
+color:white;
+padding:10px 15px;
+border-radius:20px;
+cursor:pointer;
+}
+
 @keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-@keyframes slideUp{
-from{transform:translateY(50px);opacity:0;}
-to{transform:translateY(0);opacity:1;}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-/* MOBILE */
 @media(max-width:768px){
 .hero h2{font-size:32px;}
 header{flex-direction:column;}
@@ -228,9 +182,9 @@ header{flex-direction:column;}
 </div>
 <nav>
 <a href="#home">Home</a>
-<a href="#about">About</a>
 <a href="#products">Products</a>
 <a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -239,73 +193,84 @@ header{flex-direction:column;}
 <div>
 <h2>Premium Denim Wear</h2>
 <p>Modern • Stylish • Professional Jeans Brand</p>
-<a href="#contact" class="btn">Contact Us</a>
+<a href="#products" class="btn">Shop Now</a>
 </div>
-</section>
-
-<section id="about">
-<h2>About Us</h2>
-<p style="text-align:center;font-size:18px;">
-Praveen International is a premium jeans clothing brand delivering high-quality, stylish and durable denim wear.  
-We blend modern fashion with comfort and craftsmanship.
-</p>
 </section>
 
 <section id="products">
 <h2>Our Products</h2>
 <div class="products">
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80">
 <h3>Men's Jeans</h3>
-<p>Trendy and durable.</p>
+<p>High quality denim</p>
+<div class="price">₹1299</div>
+<a href="https://wa.me/919876543210" class="btn">Buy Now</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80">
 <h3>Women's Jeans</h3>
-<p>Stylish and comfortable.</p>
+<p>Stylish comfort</p>
+<div class="price">₹1499</div>
+<a href="https://wa.me/919876543210" class="btn">Buy Now</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1602810318383-e386cc6b9c21">
-<h3>Casual Wear</h3>
-<p>Perfect for daily fashion.</p>
+<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80">
+<h3>Casual Denim</h3>
+<p>Everyday fashion</p>
+<div class="price">₹999</div>
+<a href="https://wa.me/919876543210" class="btn">Buy Now</a>
 </div>
+
 </div>
 </section>
 
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-<img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
-<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-<img src="https://images.unsplash.com/photo-1542060748-10c28b62716f">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1520974735194-6b1bb1c30f07?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc6b9c21?auto=format&fit=crop&w=800&q=80">
+</div>
+</section>
+
+<section id="reviews">
+<h2>Customer Reviews</h2>
+<div class="reviews">
+<div class="review">⭐️⭐️⭐️⭐️⭐️ <br> Excellent quality jeans! – Rahul</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ <br> Very stylish and comfortable – Sneha</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ <br> Best denim brand in market – Arjun</div>
 </div>
 </section>
 
 <section id="contact">
 <h2>Contact Us</h2>
-
-<div class="contact-info">
+<p style="text-align:center;font-size:18px;">
 📞 Phone: +91 9876543210 <br>
 📧 Email: praveeninternational@gmail.com <br>
-📍 Address: Bangalore, Karnataka, India
-</div>
+📍 Address: Bangalore, India
+</p>
 
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button class="btn">Send Message</button>
-</form>
+<h3 style="text-align:center;margin:15px;">Find Us Here</h3>
+<iframe src="https://maps.google.com/maps?q=Bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
 <footer>
 <p>© 2026 Praveen International | All Rights Reserved</p>
 </footer>
 
-<!-- WhatsApp Button -->
 <a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
+<div class="toggle" onclick="toggleDark()">🌙 Dark</div>
 
-</b
+<script>
+function toggleDark(){
+document.body.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</
